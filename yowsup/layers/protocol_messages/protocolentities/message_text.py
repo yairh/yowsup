@@ -12,7 +12,7 @@ class TextMessageProtocolEntity(MessageProtocolEntity):
     def __init__(self, body, _id = None,  _from = None, to = None, notify = None, 
         timestamp = None, participant = None, offline = None, retry = None):
         super(TextMessageProtocolEntity, self).__init__("text",_id, _from, to, notify, timestamp, participant, offline, retry)
-        self.setBody(body)
+        self.setBody(body.encode('utf-8'))
 
     def __str__(self):
         out  = super(TextMessageProtocolEntity, self).__str__()
